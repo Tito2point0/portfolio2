@@ -4,7 +4,8 @@ export const LoadingScreen = ({ onComplete }) => {
     const [text, setText] = useState("");
     const fullText = "<Jason Vasquez/>";
 
-    useEffect(() => {
+  useEffect(() => {
+      
         let index = 0
         const interval = setInterval(() => {
             setText(fullText.substring(0, index));
@@ -13,7 +14,8 @@ export const LoadingScreen = ({ onComplete }) => {
             if (index > fullText.length) {
                 clearInterval(interval);
 
-                setTimeout(() => {
+              setTimeout(() => {
+                console.log("Loading screen complete");
                     onComplete();
                 }, 1000);
             }

@@ -4,6 +4,7 @@ import "./App.css";
 import "./index.css";
 import Navbar from "./components/Navbar";
 import MobileMenu from "./components/MobileMenu";
+import GlowingTestGrid from "./components/GlowingTestGrid";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -21,6 +22,7 @@ function App() {
       >
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <GlowingTestGrid />
       </div>
     </>
   );

@@ -14,9 +14,9 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
       {/* Glowing Effect Applied */}
       <GlowingEffect
   glow={true}
-  borderWidth={15}  // ✅ Increase thickness
-  spread={30}      // ✅ Expand glow range
-  blur={30}         // ✅ Make glow more prominent
+  borderWidth={7}  // ✅ Increase thickness
+  spread={3}      // ✅ Expand glow range
+  blur={2}         // ✅ Make glow more prominent
   proximity={250}   // ✅ Make glow appear even from far away
   variant="black"   // ✅ Ensure glow is white
   className="absolute inset-[-15px] w-[calc(100%+30px)] h-[calc(100%+30px)] z-[5] opacity-100"

@@ -10,8 +10,8 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
   
     
 return (
-  <div className="fixed top-0 left-0 w-full z-40 bg-[rgba(10,10,10,0.8)] backdrop-blur-lg shadow-lg">
-  <div className="border-b border-white w-full"></div>
+  <div className="fixed top-0 left-0 w-full z-40 bg-[rgba(10,10,10,0.8)] backdrop-blur-lg border-b border-white">
+  {/* <div className="border-b border-white w-full"></div> */}
   <div className="max-w-5xl mx-auto px-4">
     <div className="flex justify-between items-center h-16">
       <a href="#home" className="font-mono text-xl font-bold text-white">

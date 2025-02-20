@@ -40,3 +40,11 @@
 .read-the-docs {
   color: #888;
 }
+
+.github-calendar {
+  max-width: 100%;
+}
+
+h2 {
+  color: #14a3e0; /* Tailwind's sky-400 */
+}

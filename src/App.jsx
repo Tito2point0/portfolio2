@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import MobileMenu from "./components/MobileMenu";
 import GlowingTestGrid from "./components/GlowingTestGrid";
 import GithubGraph from "./components/GithubGraph";
-
+import RecentProjects from "./components/ui/RecentProjects";
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,6 +30,7 @@ function App() {
         </div>
 
         <GlowingTestGrid />
+        <RecentProjects />
       </div>
     </>
   );

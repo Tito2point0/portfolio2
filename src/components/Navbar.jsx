@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import PropTypes from "prop-types";
-import { GlowingEffect } from "../components/ui/glowingEffect"; // Import glowing effect
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
   useEffect(() => {
@@ -11,28 +10,15 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
 
   return (
     <div className="relative">
-      {/* Glowing Effect Applied */}
-      <GlowingEffect
-  glow={true}
-  borderWidth={7}  // ✅ Increase thickness
-  spread={3}      // ✅ Expand glow range
-  blur={2}         // ✅ Make glow more prominent
-  proximity={250}   // ✅ Make glow appear even from far away
-  variant="black"   // ✅ Ensure glow is white
-  className="absolute inset-[-15px] w-[calc(100%+30px)] h-[calc(100%+30px)] z-[5] opacity-100"
-  disabled={false}
-/>
-
-
-      {/* Navbar Content */}
-      <div className="fixed top-0 left-0 w-full z-40 bg-[rgba(10,10,10,0.8)] backdrop-blur-lg border-b border-white">
+      {/* Navbar Content with Highest z-index */}
+      <div className="fixed top-0 left-0 w-full z-[60] bg-[rgba(10,10,10,0.8)] backdrop-blur-lg border-b border-white">
         <div className="max-w-5xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <a href="#home" className="font-mono text-xl font-bold text-white">
               Jason Vasquez <span className="text-blue-500">Portfolio</span>
             </a>
             <div
-              className="w-7 h-5 relative cursor-pointer z-40 md:hidden"
+              className="w-7 h-5 relative cursor-pointer z-[9999] md:hidden"
               onClick={() => setMenuOpen(!menuOpen)}
             >
               &#9776;

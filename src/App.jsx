@@ -28,8 +28,10 @@ function App() {
           {/* ✅ Adjusted spacing & padding for better layout */}
           <GithubGraph username="tito2point0" />
         </div>
+        <div className="scale-[0.8]">
+          <GlowingTestGrid />
+        </div>
 
-        <GlowingTestGrid />
         <RecentProjects />
       </div>
     </>
@@ -37,4 +39,3 @@ function App() {
 }
 
 export default App;
-;

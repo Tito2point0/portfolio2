@@ -5,88 +5,20 @@ export const navItems = [
     { name: "Contact", link: "#contact" },
   ];
   
-  export const gridItems = [
-    {
-      id: 1,
-      title: "I prioritize client collaboration, fostering open communication",
-      description: "",
-      // Make the first box span multiple rows/columns so it's larger:
-      className: "lg:col-span-2 md:col-span-4 md:row-span-3 lg:min-h-[40vh]",
-      // Use object-cover to fill the container; remove w-24 h-24:
-      imgClassName: "object-cover w-full h-full",
-      titleClassName: "justify-end px-3",
-      // Path to your big laptop photo \in the public folder:
-      img: "/b1.svg",
-      spareImg: "",
-    },
-    {
-        id: 2,
-        title: "I'm very flexible with time zone communications",
-        description: "",
-        className: "lg:col-span-2 md:col-span-3 md:row-span-1", // Placed side-by-side
-        imgClassName: "",
-        titleClassName: "justify-start px-3",
-      img: "/nasa2.jpg",
-        spareImg: "",
-      },
-      {
-        id: 3,
-        title: "My tech stack",
-        description: "I constantly try to improve",
-        className: "lg:col-span-2 md:col-span-3 md:row-span-1", // Placed side-by-side
-        imgClassName: "",
-        titleClassName: "justify-center px-3",
-        img: "/keyboard.jpg",
-        spareImg: "",
-      },
-    {
-      id: 4,
-      title: "Tech enthusiast with a passion for development.",
-      description: "",
-      className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-      imgClassName: "",
-      titleClassName: "justify-start px-5",
-      img: "/grid.svg",
-      spareImg: "/b4.svg",
-    },
-    {
-      id: 5,
-      title: "Currently building a JS Animation library",
-      description: "The Inside Scoop",
-      // Double the height from h-48 to h-96
-      className: "lg:col-span-2 md:col-span-3 md:row-span-1 h-96",
-      imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
-      titleClassName: "justify-center md:justify-start lg:justify-center px-3",
-      img: "/b5.svg",
-      spareImg: "/grid.svg",
-    },
-    {
-      id: 6,
-      title: "Do you want to start a project together?",
-      description: "",
-      // Double the height from h-48 to h-96
-      className: "lg:col-span-2 md:col-span-3 md:row-span-1 h-96",
-      imgClassName: "",
-      titleClassName: "justify-center md:max-w-full max-w-60 text-center px-11",
-      img: "",
-      spareImg: "",
-    },
-    
-  ];
-  
+
   export const projects = [
     {
       id: 1,
-      title: "Pokemon 3-commerce Website",
-      des: "An effective project built around next.js for e-commerce for pokemon cards.",
-      img: "/2poke-e.png",
-      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-      link: "https://github.com/Tito2point0/poke-e-commmerce",
+      title: "Musician Portfolio",
+      des: "A freelance project for a musician to showcase her music that allows to contact her for bookings.",
+      img: "/musician.png",
+      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.sv=", "/fm.svg"],
+      link: "MariaHernandez.me",
     },
     {
       id: 2,
-      title: "Poke Search Engine",
-      des: "A dedicated search engine designed to find and display all Pokémon from the Pokémon API database.",
+      title: "Pokemon Card Search",
+      des: "A dedicated search engine designed to find and display Pokémon from the Pokémon API database.",
       img: "/searchpoke.png",
       iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
       link: "https://cardpokesearch.vercel.app/",

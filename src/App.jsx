@@ -7,32 +7,52 @@ import MobileMenu from "./components/MobileMenu";
 import GlowingTestGrid from "./components/GlowingTestGrid";
 import GithubGraph from "./components/GithubGraph";
 import RecentProjects from "./components/ui/RecentProjects";
+import { Vortex } from "./components/ui/vortex"; // ✅ Import Vortex component
+
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  console.log("isLoaded state updated:", isLoaded);
 
   return (
     <>
+      {/* Show Loading Screen Until Complete */}
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
 
-      <div
-        className={`min-h-screen transition-opacity duration-700 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        } bg-black text-white`} // ✅ Fixed incorrect template literal syntax & added dark mode
-      >
-        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <div className="relative min-h-screen bg-black text-white overflow-hidden">
+        
+        {/* ✅ Vortex as Fixed Background */}
+        <Vortex
+          className="fixed top-0 left-0 w-full h-full -z-10"
+          containerClassName="fixed top-0 left-0 w-full h-full"
+          particleCount={700}
+          rangeY={100}
+          baseHue={220}
+          baseSpeed={0.5}
+          rangeSpeed={1.5}
+          baseRadius={1}
+          rangeRadius={2}
+          backgroundColor="transparent"
+        />
+        
+        {/* ✅ Conditional Rendering for Navbar */}
+        {isLoaded && (
+          <>
+            <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+            <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+          </>
+        )}
 
-        <div className="pt-20 space-y-16 px-8">
-          {/* ✅ Adjusted spacing & padding for better layout */}
+        <div className="pt-20 space-y-16 px-8 relative z-10">
           <GithubGraph username="tito2point0" />
         </div>
-        <div className="scale-[0.8]">
+
+        <div className="scale-[0.8] relative z-10">
           <GlowingTestGrid />
         </div>
 
-        <RecentProjects />
+        <div className="relative z-10 overflow-hidden">
+          <RecentProjects />
+        </div>
       </div>
     </>
   );

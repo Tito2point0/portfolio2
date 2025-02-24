@@ -13,7 +13,7 @@ export const navItems = [
       des: "A freelance project for a musician to showcase her music that allows to contact her for bookings.",
       img: "/musician.png",
       iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.sv=", "/fm.svg"],
-      link: "MariaHernandez.me",
+      link: "https://MariaHernandez.me/",
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ export const navItems = [
       des: "A dedicated search engine designed to find and display Pokémon from the Pokémon API database.",
       img: "/searchpoke.png",
       iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-      link: "https://cardpokesearch.vercel.app/",
+      link: "https://search-page-olive.vercel.app/",
     },
     {
       id: 3,

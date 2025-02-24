@@ -16,7 +16,7 @@ const RecentProjects = () => {
             key={id}
             className=" p-6 rounded-lg shadow-lg flex flex-col items-center min-h-[450px] max-h-[500px] relative transition-transform duration-300 hover:scale-[1.02] overflow-hidden"
           >
-            <PinContainer title={link} href={link}>
+            <PinContainer title={link} href={link} target="_blank" rel="noopener noreferrer">
               <div className="relative flex items-center justify-center w-full h-64 overflow-hidden mb-6">
                 <div className="relative w-full h-full overflow-hidden rounded-2xl bg-[#13162d]">
                   <img

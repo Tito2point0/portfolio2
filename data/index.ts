@@ -12,7 +12,7 @@ export const navItems = [
       title: "Musician Portfolio",
       des: "A freelance project for a musician to showcase her music that allows to contact her for bookings.",
       img: "/musician.png",
-      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.sv=", "/fm.svg"],
+      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/git.svg", "/next.svg", "/Vercel_dark.svg", "/wordpress.svg"],
       link: "https://MariaHernandez.me/",
     },
     {
@@ -20,7 +20,7 @@ export const navItems = [
       title: "Pokemon Card Search",
       des: "A dedicated search engine designed to find and display Pokémon from the Pokémon API database.",
       img: "/searchpoke.png",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/git.svg", "/Vercel_dark.svg"],
       link: "https://search-page-olive.vercel.app/",
     },
     {
@@ -28,16 +28,16 @@ export const navItems = [
       title: "Poke-blog",
       des: "PokéBlog is a fan-driven platform offering tips, guides, and vibrant community discussions to help trainers explore and connect with the world of Pokémon..",
       img: "/blogger.png",
-      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+      iconLists: ["/re.svg", "/tail.svg",  "/git.svg", "/next.svg", "/Vercel_dark.svg"],
       link: "https://jasonspokebinder.vercel.app/",
     },
     {
       id: 4,
       title: "Portfolio Website",
-      des: "A portfolio website containing all my projects using next.js and typescript.",
-      img: "/jvport.png",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-      link: "https://github.com/Tito2point0/jvportfolio2",
+      des: "A Work in Progress E-commerce site set to sell pokemon cards using wix.",
+      img: "/e-commerce.png",
+      iconLists: ["/next.svg", "/tail.svg", "/wix.webp", "/git.svg", "/Vercel_dark.svg"],
+      link: "https://poke-e-commmerce.vercel.app/",
     },
   ];
   

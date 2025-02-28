@@ -1,16 +1,33 @@
-export const home = () => {
+import { ColourfulText } from "../ui/colorful-text";
+
+export const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative"
+      className="min-h-screen flex flex-col items-center justify-center relative px-4"
     >
-      <div className="text-center z-10 px-4">
-              <h1>
-                  Hi,  My name is <span className="text-green-700">Jason</span>. 
+      <div className="text-center z-10 mb-8">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent leading-tight">
+          Hi, I'm <span><ColourfulText text="Jason Vasquez" /></span>.
         </h1>
+        <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto">
+          Passionate about building seamless digital experiences with modern technologies like React, Next.js, Node.js, and TypeScript.
+        </p>
+      </div>
+
+      <div className="text-center z-10 max-w-3xl">
+        <p className="text-gray-300 text-lg mb-4">
+          I thrive in fast-paced, team-driven environments, bringing a blend of technical expertise and real-world problem-solving skills honed from both software development and my hands-on experience in construction management.
+        </p>
+        <p className="text-gray-300 text-lg mb-4">
+          I&apos;m driven by creativity, innovation, and a relentless desire to learn and improve.
+        </p>
+        <p className="text-gray-300 text-lg">
+          My goal is to contribute to projects that make a difference, continuously push my boundaries, and grow as a leader and collaborator in the tech space.
+        </p>
       </div>
     </section>
   );
 };
 
-export default home;
+export default Home;

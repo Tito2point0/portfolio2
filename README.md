@@ -2,3 +2,6 @@
 -need to see what needs to be done in terms of sizing for the navbar or css styling 
 -need to remember to adjust information inside of the navbar
 - add animations to it or not?
+-change font to home
+-add items to home maybe change the intro to home
+- what can be done for home to make it more unique

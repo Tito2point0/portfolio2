@@ -9,7 +9,7 @@ import GithubGraph from "./components/GithubGraph";
 import RecentProjects from "./components/ui/RecentProjects";
 import { Vortex } from "./components/ui/vortex"; // ✅ Import Vortex component
 import Home from "./components/sections/Home";
-
+import About from "./components/sections/About";
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -43,6 +43,8 @@ function App() {
           </>
         )}
         <Home />
+
+        <About />
         <div className="pt-20 space-y-16 px-8 relative z-10">
           <GithubGraph username="tito2point0" />
         </div>

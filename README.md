@@ -5,3 +5,4 @@
 -change font to home
 -add items to home maybe change the intro to home
 - what can be done for home to make it more unique
+- add more stylistics to home section but what to make 

@@ -1,0 +1,38 @@
+/* src/components/AboutMe.module.css */
+.container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7); /* Make the background semi-transparent */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  cursor: pointer;
+}
+
+.title {
+  font-size: 2rem;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.title:hover {
+  color: #007BFF;
+}
+
+.content {
+  margin-top: 20px;
+  overflow: visible; /* Changed from hidden to visible */
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1em;
+}

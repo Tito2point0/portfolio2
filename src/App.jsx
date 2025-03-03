@@ -10,6 +10,7 @@ import RecentProjects from "./components/ui/RecentProjects";
 import { Vortex } from "./components/ui/vortex"; // ✅ Import Vortex component
 import Home from "./components/sections/Home";
 import About from "./components/sections/About";
+// import ShimmerButton from "./components/sections/shimmerbutton";
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -45,6 +46,7 @@ function App() {
         <Home />
 
         <About />
+        {/* <ShimmerButton text="About Me" /> */}
         <div className="pt-20 space-y-16 px-8 relative z-10">
           <GithubGraph username="tito2point0" />
         </div>

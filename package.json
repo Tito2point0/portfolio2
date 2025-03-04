@@ -39,8 +39,8 @@
   },
   "homepage": "https://github.com/Tito2point0/portfolio2#readme",
   "dependencies": {
-    "@react-three/drei": "^9.80.8",
-    "@react-three/fiber": "^8.0.27",
+    "@react-three/drei": "^10.0.3",
+    "@react-three/fiber": "^9.0.4",
     "@tabler/icons-react": "^3.30.0",
     "@tailwindcss/vite": "^4.0.6",
     "clsx": "^2.1.1",

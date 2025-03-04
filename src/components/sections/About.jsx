@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { OrbitControls, Html } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { TextureLoader } from "three";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -33,9 +33,10 @@ RotatingShape.propTypes = {
 const AboutMe = () => {
   const [expanded, setExpanded] = useState(false);
   const [contentLoaded, setContentLoaded] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   // ✅ Load the Image from Public Folder
-  const imageTexture = useLoader(TextureLoader, "/aboutme.png"); 
+  const imageTexture = useLoader(TextureLoader, "/aboutme2.jpg");
 
   useEffect(() => {
     console.log("AboutMe component rendered");
@@ -44,6 +45,11 @@ const AboutMe = () => {
     setTimeout(() => {
       setContentLoaded(true);
     }, 1000);
+
+    // ✅ Detect screen size and update state dynamically
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const toggleExpand = () => {
@@ -73,7 +79,7 @@ const AboutMe = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        style={{ display: "flex", justifyContent: "center" }} // ✅ Centers button
+        style={{ display: "flex", justifyContent: "center" }}
       >
         <motion.button
           onClick={toggleExpand}
@@ -84,8 +90,8 @@ const AboutMe = () => {
             fontSize: "1.5rem",
             cursor: "pointer",
             backgroundColor: "transparent",
-            color: "#18016b",
-            border: "2px solid #1a9cf3",
+            color: "#1A73E8",
+            border: "2px solid #1A73E8",
             borderRadius: "50px",
             position: "relative",
             zIndex: "10",
@@ -126,57 +132,107 @@ const AboutMe = () => {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
             style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 2fr",
-              alignItems: "center",
-              gap: "20px",
               padding: "40px",
               borderRadius: "15px",
               backgroundColor: "rgba(0, 0, 0, 0.8)",
-              boxShadow: "0 10px 20px rgba(0,0,0,0.3)",
+              boxShadow: "0 10px 20px rgba(255, 255, 255, 0.2)",
               marginTop: "20px",
+              display: "grid",
+              gridTemplateColumns: isMobile ? "1fr" : "1fr 2fr",
+              alignItems: "center",
+              gap: "20px",
+              textAlign: isMobile ? "left" : "center",
             }}
           >
-            {/* ✅ 3D Rotating Cube with Your Picture as Texture */}
-            <div style={{ height: "300px", width: "100%", position: "relative" }}>
-              <Canvas camera={{ position: [0, 0, 4] }}>
-                <ambientLight intensity={0.5} />
-                <directionalLight position={[5, 5, 5]} intensity={1} castShadow />
-                <OrbitControls />
-                <RotatingShape imageTexture={imageTexture} />
-              </Canvas>
-              
-              {/* ✅ "Click & Drag" Text Below the Cube */}
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: "-30px",
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  color: "#fff",
-                  fontWeight: "bold",
-                  fontSize: "14px",
-                }}
-              >
-                👋 Click & Drag Me!
-              </div>
-            </div>
+            {/* ✅ Mobile Mode: Text Wraps Around the Cube */}
+            {isMobile ? (
+              <>
+                <p style={{ maxWidth: "600px", marginBottom: "20px" }}>{aboutText[0]}</p>
 
-            {/* ✅ About Me Text Section */}
-            <div>
-              <h2 style={{ color: "#17009b", marginBottom: "10px" }}>About Me</h2>
-              {aboutText.map((text, index) => (
-                <motion.p
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: index * 0.2, duration: 0.5 }}
-                  style={{ margin: "10px 0", color: "#fff" }}
+                {/* ✅ Cube on Left */}
+                <div
+                  style={{
+                    height: "300px",
+                    width: "100%",
+                    position: "relative",
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
                 >
-                  {text}
-                </motion.p>
-              ))}
-            </div>
+                  <Canvas camera={{ position: [0, 0, 4] }}>
+                    <ambientLight intensity={1} />
+                    <directionalLight position={[5, 5, 5]} intensity={1.5} castShadow />
+                    <OrbitControls />
+                    <RotatingShape imageTexture={imageTexture} />
+                  </Canvas>
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: "-30px",
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      color: "#fff",
+                      fontWeight: "bold",
+                      fontSize: "14px",
+                    }}
+                  >
+                    👋 Click & Drag Me!
+                  </div>
+                </div>
+
+                <p style={{ maxWidth: "600px", marginTop: "20px" }}>{aboutText[1]}</p>
+                <p style={{ maxWidth: "600px", marginTop: "10px" }}>{aboutText[2]}</p>
+              </>
+            ) : (
+              <>
+                {/* ✅ Desktop Mode: Cube Left, Text Right */}
+                <div
+                  style={{
+                    height: "300px",
+                    width: "100%",
+                    position: "relative",
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Canvas camera={{ position: [0, 0, 4] }}>
+                    <ambientLight intensity={1} />
+                    <directionalLight position={[5, 5, 5]} intensity={1.5} castShadow />
+                    <OrbitControls />
+                    <RotatingShape imageTexture={imageTexture} />
+                  </Canvas>
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: "-30px",
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      color: "#fff",
+                      fontWeight: "bold",
+                      fontSize: "14px",
+                    }}
+                  >
+                    👋 Click & Drag Me!
+                  </div>
+                </div>
+
+                {/* ✅ Text Section */}
+                <div>
+                  <h2 style={{ color: "#17009b", marginBottom: "10px" }}>About Me</h2>
+                  {aboutText.map((text, index) => (
+                    <motion.p
+                      key={index}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: index * 0.2, duration: 0.5 }}
+                      style={{ margin: "10px 0", color: "#fff" }}
+                    >
+                      {text}
+                    </motion.p>
+                  ))}
+                </div>
+              </>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

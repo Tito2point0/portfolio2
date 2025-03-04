@@ -21,7 +21,6 @@ const RotatingShape = ({ imageTexture }) => {
   return (
     <mesh ref={meshRef} castShadow receiveShadow>
       <boxGeometry args={[1.5, 1.5, 1.5]} />
-      {/* ✅ Apply Your Image Texture on the Cube */}
       <meshStandardMaterial map={imageTexture} />
     </mesh>
   );
@@ -69,11 +68,12 @@ const AboutMe = () => {
         color: "#fff",
       }}
     >
-      {/* ✅ "About Me" Button with Your Image Inside */}
+      {/* ✅ Centered "About Me" Button */}
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
+        style={{ display: "flex", justifyContent: "center" }} // ✅ Centers button
       >
         <motion.button
           onClick={toggleExpand}
@@ -84,8 +84,8 @@ const AboutMe = () => {
             fontSize: "1.5rem",
             cursor: "pointer",
             backgroundColor: "transparent",
-            color: "#4CAF50",
-            border: "2px solid #4CAF50",
+            color: "#18016b",
+            border: "2px solid #1a9cf3",
             borderRadius: "50px",
             position: "relative",
             zIndex: "10",
@@ -164,7 +164,7 @@ const AboutMe = () => {
 
             {/* ✅ About Me Text Section */}
             <div>
-              <h2 style={{ color: "#4CAF50", marginBottom: "10px" }}>About Me</h2>
+              <h2 style={{ color: "#17009b", marginBottom: "10px" }}>About Me</h2>
               {aboutText.map((text, index) => (
                 <motion.p
                   key={index}

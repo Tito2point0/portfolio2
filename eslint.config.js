@@ -44,6 +44,7 @@ export default [
             'args',
             'intensity',
             'position',
+            'map'
             // Add other Three.js-specific props here
           ],
         },

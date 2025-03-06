@@ -10,6 +10,7 @@ import RecentProjects from "./components/ui/RecentProjects";
 import { Vortex } from "./components/ui/vortex"; // ✅ Import Vortex component
 import Home from "./components/sections/Home";
 import About from "./components/sections/About";
+import Footer from "./components/sections/footer"
 // import ShimmerButton from "./components/sections/shimmerbutton";
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -58,6 +59,7 @@ function App() {
         <div className="relative z-10 overflow-hidden">
           <RecentProjects />
         </div>
+        <Footer/>
       </div>
     </>
   );

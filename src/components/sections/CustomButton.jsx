@@ -1,12 +1,15 @@
 
 import PropTypes from "prop-types";
 import { ButtonsCard } from "../ui/tailwindcss-buttons";
+import { RevealOnScroll } from "./RevealOnScroll";
 
 export default function CustomButton({ text, onClick, className }) {
   return (
+    <RevealOnScroll>
     <ButtonsCard className={className} onClick={onClick}>
       <span className="text-lg font-bold">{text}</span>
-    </ButtonsCard>
+      </ButtonsCard>
+      </RevealOnScroll>
   );
 }
 

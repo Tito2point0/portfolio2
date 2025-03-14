@@ -1,9 +1,11 @@
 import { projects } from "../../../data/index";
 import { PinContainer } from "./3d-pin";
 import { FaLocationArrow } from "react-icons/fa";
+import { RevealOnScroll } from "../RevealOnScroll";
 
 const RecentProjects = () => {
   return (
+    <RevealOnScroll>
     <div className="pt-20 px-4" id="projects">
       <h1 className="text-4xl font-bold text-center mb-10">
         A small selection of <span className="text-purple">recent projects</span>
@@ -69,7 +71,8 @@ const RecentProjects = () => {
           </div>
         ))}
       </div>
-    </div>
+      </div>
+      </RevealOnScroll>
   );
 };
 

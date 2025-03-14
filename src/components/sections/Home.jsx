@@ -1,4 +1,4 @@
-
+import { RevealOnScroll } from '../RevealOnScroll';
 
 export const Home = () => {
   return (
@@ -6,6 +6,7 @@ export const Home = () => {
       id="home"
       className="min-h-screen flex flex-col items-center justify-center relative px-4"
     >
+      <RevealOnScroll>
       <div className="text-center z-10 mb-8">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent leading-tight">
                   Hi, I&apos;m <span>
@@ -39,6 +40,7 @@ export const Home = () => {
                 </a>
               </div>
       </div>
+      </RevealOnScroll>
     </section>
   );
 };

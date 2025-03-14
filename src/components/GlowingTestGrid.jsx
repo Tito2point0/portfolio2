@@ -3,9 +3,10 @@
 import PropTypes from "prop-types"; // ✅ Corrected import (uppercase P)
 import { Code, UploadCloud, Database, Monitor, ShieldCheck } from "lucide-react"; // ✅ Corrected icons
 import { GlowingEffect } from "./ui/glowingEffect"; // ✅ Import glowing effect
-
+import { RevealOnScroll } from "./RevealOnScroll"; // ✅ Import RevealOnScroll
 export default function GlowingEffectDemoSecond() {
   return (
+    <RevealOnScroll>
     <ul className="grid pt-20 grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
       <GridItem
         area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
@@ -43,7 +44,9 @@ export default function GlowingEffectDemoSecond() {
         bgImage="jwt.png"
       />
     </ul>
-  );
+    </RevealOnScroll>
+      );
+    
 }
 
 const GridItem = ({ area, icon, title, description, bgImage }) => {

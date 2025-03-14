@@ -1,4 +1,4 @@
-import { ColourfulText } from "../ui/colorful-text";
+
 
 export const Home = () => {
   return (

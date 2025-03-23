@@ -36,18 +36,15 @@ const AboutMe = () => {
   const [contentLoaded, setContentLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-  // ✅ Load the Image from Public Folder
   const imageTexture = useLoader(TextureLoader, "/aboutme2.jpg");
 
   useEffect(() => {
     console.log("AboutMe component rendered");
 
-    // Prevent AboutMe from displaying too early
     setTimeout(() => {
       setContentLoaded(true);
     }, 1000);
 
-    // ✅ Detect screen size and update state dynamically
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -60,20 +57,19 @@ const AboutMe = () => {
 
   const aboutText = [
     "Hi! I’m Jason Vasquez—a front-end web developer with roots in both the Bronx and the American South. I grew up navigating two very different environments, which taught me how to adapt early on. After moving back to New York, I joined the U.S. Marine Corps, where I gained resilience, discipline, and a sharp attention to detail.",
-    
+
     "After my service, I worked in construction at Archstone. I started from the very bottom as a sweeper and worked my way up to Assistant Superintendent, managing labor crews, coordinating trades, and solving tough, on-site problems that didn’t always have clear answers. That experience taught me how to think critically, communicate effectively, and lead under pressure.",
-    
+
     "But my passion for tech goes way back—customizing MySpace pages, building homepages, running Linux distros like Backtrack, and learning JavaScript back in 2007. Front-end development called to me because of the balance between creative freedom and complex logic. I love solving problems, building algorithms, and creating experiences that users interact with every day.",
-    
+
     "Some of my proudest projects include building search pages for Pokémon data using APIs—structuring large datasets into intuitive, engaging user experiences. I love the challenge of taking something overwhelming and turning it into something seamless.",
-    
-    "The hardest part of my tech journey has been tackling algorithm problems on platforms like LeetCode. It’s humbling, sometimes frustrating—but it’s also the most rewarding. Breaking big problems into smaller pieces, even when I don’t know where to start, reminds me of why I fell in love with coding in the first place.",
-    
+
+    "The hardest part of my tech journey has been tacklin algorithm problems on platforms like LeetCode. It’s humbling, sometimes frustrating—but it’s also the most rewarding. Breaking big problems into smaller pieces, even when I don’t know where to start, reminds me of why I fell in love with coding in the first place.",
+
     "My long-term goal in tech is to build applications that help immigrants like my parents—tools that teach English, provide access to benefits, and help people prepare for the citizenship process. Their journey gives me strength, and it drives me to keep pushing forward, no matter how hard it gets.",
-    
+
     "What sets me apart? Ingenuity. I approach problems in ways others may not consider. I thrive in team environments—sharing ideas, asking questions, and learning from others. I’m relentless about details because I believe that if you don’t understand every part of something, you don’t truly know it. And I’m here to learn, build, and contribute every step of the way.",
   ];
-  
 
   if (!contentLoaded) return null;
 
@@ -86,7 +82,6 @@ const AboutMe = () => {
         color: "#fff",
       }}
     >
-      {/* ✅ Wrapped Button Inside RevealOnScroll */}
       <RevealOnScroll>
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -158,7 +153,6 @@ const AboutMe = () => {
               textAlign: isMobile ? "left" : "center",
             }}
           >
-            {/* ✅ Text Section */}
             <div>
               <h2 style={{ color: "#17009b", marginBottom: "10px" }}>About Me</h2>
               {aboutText.map((text, index) => (
@@ -174,7 +168,6 @@ const AboutMe = () => {
               ))}
             </div>
 
-            {/* ✅ Cube Section */}
             <div
               style={{
                 height: "300px",

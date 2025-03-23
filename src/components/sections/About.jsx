@@ -143,85 +143,65 @@ const AboutMe = () => {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
             style={{
+              padding: "40px",
+              borderRadius: "15px",
+              backgroundColor: "rgba(0, 0, 0, 0.8)",
+              boxShadow: "0 10px 20px rgba(255, 255, 255, 0.2)",
               marginTop: "20px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "30px",
-              alignItems: "center",
               textAlign: isMobile ? "left" : "center",
             }}
           >
-            {/* Text Block One */}
-            <div
-              style={{
-                backgroundColor: "rgba(0, 0, 0, 0.8)",
-                padding: "30px",
-                borderRadius: "15px",
-                boxShadow: "0 10px 20px rgba(255, 255, 255, 0.2)",
-                maxWidth: "900px",
-              }}
-            >
-              <h2 style={{ color: "#17009b", marginBottom: "10px" }}>About Me</h2>
+            <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+              <h2 style={{ color: "#17009b", marginBottom: "20px" }}>About Me</h2>
               {aboutTextOne.map((text, index) => (
                 <motion.p
-                  key={index}
+                  key={`one-${index}`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: index * 0.2, duration: 0.5 }}
-                  style={{ margin: "10px 0", color: "#fff" }}
+                  style={{ margin: "15px 0", color: "#fff" }}
                 >
                   {text}
                 </motion.p>
               ))}
-            </div>
 
-            {/* Cube */}
-            <div
-              style={{
-                height: "300px",
-                width: "100%",
-                maxWidth: "900px",
-                position: "relative",
-              }}
-            >
-              <Canvas camera={{ position: [0, 0, 4] }}>
-                <ambientLight intensity={1} />
-                <directionalLight position={[5, 5, 5]} intensity={1.5} castShadow />
-                <OrbitControls />
-                <RotatingShape imageTexture={imageTexture} />
-              </Canvas>
               <div
                 style={{
-                  position: "absolute",
-                  bottom: "-30px",
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  color: "#fff",
-                  fontWeight: "bold",
-                  fontSize: "14px",
+                  height: "300px",
+                  width: "100%",
+                  maxWidth: "100%",
+                  position: "relative",
+                  margin: "30px 0",
                 }}
               >
-                👋 Click & Drag Me!
+                <Canvas camera={{ position: [0, 0, 4] }}>
+                  <ambientLight intensity={1} />
+                  <directionalLight position={[5, 5, 5]} intensity={1.5} castShadow />
+                  <OrbitControls />
+                  <RotatingShape imageTexture={imageTexture} />
+                </Canvas>
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "-30px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    color: "#fff",
+                    fontWeight: "bold",
+                    fontSize: "14px",
+                  }}
+                >
+                  👋 Click & Drag Me!
+                </div>
               </div>
-            </div>
 
-            {/* Text Block Two */}
-            <div
-              style={{
-                backgroundColor: "rgba(0, 0, 0, 0.8)",
-                padding: "30px",
-                borderRadius: "15px",
-                boxShadow: "0 10px 20px rgba(255, 255, 255, 0.2)",
-                maxWidth: "900px",
-              }}
-            >
               {aboutTextTwo.map((text, index) => (
                 <motion.p
-                  key={index}
+                  key={`two-${index}`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: index * 0.2, duration: 0.5 }}
-                  style={{ margin: "10px 0", color: "#fff" }}
+                  style={{ margin: "15px 0", color: "#fff" }}
                 >
                   {text}
                 </motion.p>

@@ -55,20 +55,22 @@ const AboutMe = () => {
     setExpanded((prev) => !prev);
   };
 
-  const aboutText = [
+  const aboutTextOne = [
     "Hi! I’m Jason Vasquez—a front-end web developer with roots in both the Bronx and the American South. I grew up navigating two very different environments, which taught me how to adapt early on. After moving back to New York, I joined the U.S. Marine Corps, where I gained resilience, discipline, and a sharp attention to detail.",
 
     "After my service, I worked in construction at Archstone. I started from the very bottom as a sweeper and worked my way up to Assistant Superintendent, managing labor crews, coordinating trades, and solving tough, on-site problems that didn’t always have clear answers. That experience taught me how to think critically, communicate effectively, and lead under pressure.",
 
-    "But my passion for tech goes way back—customizing MySpace pages, building homepages, running Linux distros like Backtrack, and learning JavaScript back in 2007. Front-end development called to me because of the balance between creative freedom and complex logic. I love solving problems, building algorithms, and creating experiences that users interact with every day.",
+    "But my passion for tech goes way back—customizing MySpace pages, building homepages, running Linux distros like Backtrack, and learning JavaScript back in 2007. Front-end development called to me because of the balance between creative freedom and complex logic. I love solving problems, building algorithms, and creating experiences that users interact with every day."
+  ];
 
+  const aboutTextTwo = [
     "Some of my proudest projects include building search pages for Pokémon data using APIs—structuring large datasets into intuitive, engaging user experiences. I love the challenge of taking something overwhelming and turning it into something seamless.",
 
     "The hardest part of my tech journey has been tackling algorithm problems on platforms like LeetCode. It’s humbling, sometimes frustrating—but it’s also the most rewarding. Breaking big problems into smaller pieces, even when I don’t know where to start, reminds me of why I fell in love with coding in the first place.",
 
     "My long-term goal in tech is to build applications that help immigrants like my parents—tools that teach English, provide access to benefits, and help people prepare for the citizenship process. Their journey gives me strength, and it drives me to keep pushing forward, no matter how hard it gets.",
 
-    "What sets me apart? Ingenuity. I approach problems in ways others may not consider. I thrive in team environments—sharing ideas, asking questions, and learning from others. I’m relentless about details because I believe that if you don’t understand every part of something, you don’t truly know it. And I’m here to learn, build, and contribute every step of the way.",
+    "What sets me apart? Ingenuity. I approach problems in ways others may not consider. I thrive in team environments—sharing ideas, asking questions, and learning from others. I’m relentless about details because I believe that if you don’t understand every part of something, you don’t truly know it. And I’m here to learn, build, and contribute every step of the way."
   ];
 
   if (!contentLoaded) return null;
@@ -141,21 +143,26 @@ const AboutMe = () => {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
             style={{
-              padding: "40px",
-              borderRadius: "15px",
-              backgroundColor: "rgba(0, 0, 0, 0.8)",
-              boxShadow: "0 10px 20px rgba(255, 255, 255, 0.2)",
               marginTop: "20px",
-              display: "grid",
-              gridTemplateColumns: isMobile ? "1fr" : "1fr 2fr",
+              display: "flex",
+              flexDirection: "column",
+              gap: "30px",
               alignItems: "center",
-              gap: "20px",
               textAlign: isMobile ? "left" : "center",
             }}
           >
-            <div>
+            {/* Text Block One */}
+            <div
+              style={{
+                backgroundColor: "rgba(0, 0, 0, 0.8)",
+                padding: "30px",
+                borderRadius: "15px",
+                boxShadow: "0 10px 20px rgba(255, 255, 255, 0.2)",
+                maxWidth: "900px",
+              }}
+            >
               <h2 style={{ color: "#17009b", marginBottom: "10px" }}>About Me</h2>
-              {aboutText.map((text, index) => (
+              {aboutTextOne.map((text, index) => (
                 <motion.p
                   key={index}
                   initial={{ opacity: 0 }}
@@ -168,13 +175,13 @@ const AboutMe = () => {
               ))}
             </div>
 
+            {/* Cube */}
             <div
               style={{
                 height: "300px",
                 width: "100%",
+                maxWidth: "900px",
                 position: "relative",
-                display: "flex",
-                justifyContent: "center",
               }}
             >
               <Canvas camera={{ position: [0, 0, 4] }}>
@@ -196,6 +203,29 @@ const AboutMe = () => {
               >
                 👋 Click & Drag Me!
               </div>
+            </div>
+
+            {/* Text Block Two */}
+            <div
+              style={{
+                backgroundColor: "rgba(0, 0, 0, 0.8)",
+                padding: "30px",
+                borderRadius: "15px",
+                boxShadow: "0 10px 20px rgba(255, 255, 255, 0.2)",
+                maxWidth: "900px",
+              }}
+            >
+              {aboutTextTwo.map((text, index) => (
+                <motion.p
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: index * 0.2, duration: 0.5 }}
+                  style={{ margin: "10px 0", color: "#fff" }}
+                >
+                  {text}
+                </motion.p>
+              ))}
             </div>
           </motion.div>
         )}

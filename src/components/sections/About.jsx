@@ -59,10 +59,21 @@ const AboutMe = () => {
   };
 
   const aboutText = [
-    "Hi! My name is Jason Vasquez. I'm a proud native of the Bronx, New York. After serving in the Marine Corps, I returned home and worked in construction and at Target. However, my true passion has always been coding.",
-    "I am a dedicated problem solver with a keen eye for detail. The Marine Corps taught me discipline and resilience, while construction honed my teamwork skills. At Target, I developed adaptability in a fast-paced environment.",
-    "Now, I'm mastering web development, focusing on React, Three.js, and modern front-end technologies. My goal is to bring ideas to life through engaging and interactive web experiences.",
+    "Hi! I’m Jason Vasquez—a front-end web developer with roots in both the Bronx and the American South. I grew up navigating two very different environments, which taught me how to adapt early on. After moving back to New York, I joined the U.S. Marine Corps, where I gained resilience, discipline, and a sharp attention to detail.",
+    
+    "After my service, I worked in construction at Archstone. I started from the very bottom as a sweeper and worked my way up to Assistant Superintendent, managing labor crews, coordinating trades, and solving tough, on-site problems that didn’t always have clear answers. That experience taught me how to think critically, communicate effectively, and lead under pressure.",
+    
+    "But my passion for tech goes way back—customizing MySpace pages, building homepages, running Linux distros like Backtrack, and learning JavaScript back in 2007. Front-end development called to me because of the balance between creative freedom and complex logic. I love solving problems, building algorithms, and creating experiences that users interact with every day.",
+    
+    "Some of my proudest projects include building search pages for Pokémon data using APIs—structuring large datasets into intuitive, engaging user experiences. I love the challenge of taking something overwhelming and turning it into something seamless.",
+    
+    "The hardest part of my tech journey has been tackling algorithm problems on platforms like LeetCode. It’s humbling, sometimes frustrating—but it’s also the most rewarding. Breaking big problems into smaller pieces, even when I don’t know where to start, reminds me of why I fell in love with coding in the first place.",
+    
+    "My long-term goal in tech is to build applications that help immigrants like my parents—tools that teach English, provide access to benefits, and help people prepare for the citizenship process. Their journey gives me strength, and it drives me to keep pushing forward, no matter how hard it gets.",
+    
+    "What sets me apart? Ingenuity. I approach problems in ways others may not consider. I thrive in team environments—sharing ideas, asking questions, and learning from others. I’m relentless about details because I believe that if you don’t understand every part of something, you don’t truly know it. And I’m here to learn, build, and contribute every step of the way.",
   ];
+  
 
   if (!contentLoaded) return null;
 

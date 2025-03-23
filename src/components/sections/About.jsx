@@ -64,7 +64,7 @@ const AboutMe = () => {
 
     "Some of my proudest projects include building search pages for Pokémon data using APIs—structuring large datasets into intuitive, engaging user experiences. I love the challenge of taking something overwhelming and turning it into something seamless.",
 
-    "The hardest part of my tech journey has been tacklin algorithm problems on platforms like LeetCode. It’s humbling, sometimes frustrating—but it’s also the most rewarding. Breaking big problems into smaller pieces, even when I don’t know where to start, reminds me of why I fell in love with coding in the first place.",
+    "The hardest part of my tech journey has been tackling algorithm problems on platforms like LeetCode. It’s humbling, sometimes frustrating—but it’s also the most rewarding. Breaking big problems into smaller pieces, even when I don’t know where to start, reminds me of why I fell in love with coding in the first place.",
 
     "My long-term goal in tech is to build applications that help immigrants like my parents—tools that teach English, provide access to benefits, and help people prepare for the citizenship process. Their journey gives me strength, and it drives me to keep pushing forward, no matter how hard it gets.",
 

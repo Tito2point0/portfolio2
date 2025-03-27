@@ -56,7 +56,7 @@ const AboutMe = () => {
   };
 
   const aboutTextOne = [
-    "Hi! I’m Jason Vasquez—a front-end web developer with roots in both the Bronx and the American South. I grew up navigating two very different environments, which taught me how to adapt early on. After moving back to New York, I joined the U.S. Marine Corps, where I gained resilience, discipline, and a sharp attention to detail.",
+    "Hi! I’m Jason Vasquez—a front-end web developer with roots in both the Bronx and the South. I grew up navigating two very different environments, which taught me how to adapt early on. After moving back to New York, I joined the U.S. Marine Corps, where I gained resilience, discipline, and a sharp attention to detail.",
 
     "After my service, I worked in construction at Archstone. I started from the very bottom as a sweeper and worked my way up to Assistant Superintendent, managing labor crews, coordinating trades, and solving tough, on-site problems that didn’t always have clear answers. That experience taught me how to think critically, communicate effectively, and lead under pressure.",
 

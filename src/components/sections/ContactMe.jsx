@@ -3,9 +3,17 @@ import emailjs from "emailjs-com";
 import { useState } from "react";
 export const ContactMe = () => {
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+
   const SERVICE_ID = "service_cpn4zt7";
   const TEMPLATE_ID = "template_d1vig02";
   const PUBLIC_ID = "1YxTbLiKzf2FTH5hy"
+  
     const handleSubmit = (e) => {
         e.preventDefault()
         

@@ -45,6 +45,10 @@ export const ContactMe = () => {
                 id="name"
                 name="name"
                 required
+                value={formData.name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline--none focus:border-blue focus:bg-blue-500/5"
                 placeholder="Name.."
               />
@@ -55,6 +59,7 @@ export const ContactMe = () => {
                 id="email"
                 name="email"
                 required
+                value={formData.email}
                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline--none focus:border-blue focus:bg-blue-500/5"
                 placeholder="example@gmail.com"
               />
@@ -64,6 +69,10 @@ export const ContactMe = () => {
                 id="message"
                 name="message"
                 required
+                value={formData.message}
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
                 rows={6}
                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline--none focus:border-blue focus:bg-blue-500/5"
                 placeholder="Your message.."

@@ -73,6 +73,9 @@ export const ContactMe = () => {
                 name="message"
                 required
                 value={formData.message}
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }   
                 rows={6}
                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline--none focus:border-blue focus:bg-blue-500/5"
                 placeholder="Your message.."

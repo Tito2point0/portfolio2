@@ -1,27 +1,31 @@
-import  { useState } from 'react';
-import emailjs from 'emailjs-com';
-import { RevealOnScroll } from '../RevealOnScroll';
+import { useState } from "react";
+import emailjs from "emailjs-com";
+import { RevealOnScroll } from "../RevealOnScroll";
 
 export const ContactMe = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [resultMessage, setResultMessage] = useState('');
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [resultMessage, setResultMessage] = useState("");
 
-  const SERVICE_ID = 'service_cpn4zt7';
-  const TEMPLATE_ID = 'template_d1vig02';
-  const PUBLIC_ID = '1YxTbLiKzf2FTH5hy';
+  const SERVICE_ID = "service_cpn4zt7";
+  const TEMPLATE_ID = "template_d1vig02";
+  const PUBLIC_ID = "1YxTbLiKzf2FTH5hy";
 
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs
       .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_ID)
       .then(() => {
-        setResultMessage('✅ Message sent successfully!');
-        setFormData({ name: '', email: '', message: '' });
-        setTimeout(() => setResultMessage(''), 4000);
+        setResultMessage("✅ Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setResultMessage(""), 4000);
       })
       .catch(() => {
-        setResultMessage('❌ Error sending message. Please try again later.');
-        setTimeout(() => setResultMessage(''), 4000);
+        setResultMessage("❌ Error sending message. Please try again later.");
+        setTimeout(() => setResultMessage(""), 4000);
       });
   };
 
@@ -35,14 +39,20 @@ export const ContactMe = () => {
 
       <RevealOnScroll>
         <div className="w-full max-w-4xl z-10 bg-zinc-900/80 backdrop-blur-md border border-zinc-700 p-12 md:p-20 rounded-3xl shadow-[0_10px_50px_rgba(0,0,0,0.8)] transition-all duration-500">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-center text-blue-400 mb-14">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-center text-blue-400 mb-14 animate-typing">
             Get in Touch
           </h2>
+
           <form onSubmit={handleSubmit} className="space-y-12">
             {/* Name Input */}
             <RevealOnScroll delay={0}>
               <div className="transition duration-700 ease-out">
-                <label htmlFor="name" className="block text-lg font-semibold mb-3 text-zinc-100">Name</label>
+                <label
+                  htmlFor="name"
+                  className="block text-lg font-semibold mb-3 text-zinc-100"
+                >
+                  Name
+                </label>
                 <input
                   type="text"
                   name="name"
@@ -50,7 +60,9 @@ export const ContactMe = () => {
                   required
                   placeholder="Your Name"
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                   className="w-full px-6 py-4 text-md rounded-xl bg-zinc-800 text-white border border-zinc-600 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-md placeholder-zinc-400 transition"
                 />
               </div>
@@ -59,7 +71,12 @@ export const ContactMe = () => {
             {/* Email Input */}
             <RevealOnScroll delay={150}>
               <div className="transition duration-700 ease-out">
-                <label htmlFor="email" className="block text-lg font-semibold mb-3 text-zinc-100">Email</label>
+                <label
+                  htmlFor="email"
+                  className="block text-lg font-semibold mb-3 text-zinc-100"
+                >
+                  Email
+                </label>
                 <input
                   type="email"
                   name="email"
@@ -67,7 +84,9 @@ export const ContactMe = () => {
                   required
                   placeholder="example@email.com"
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   className="w-full px-6 py-4 text-md rounded-xl bg-zinc-800 text-white border border-zinc-600 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-md placeholder-zinc-400 transition"
                 />
               </div>
@@ -76,7 +95,12 @@ export const ContactMe = () => {
             {/* Message Input */}
             <RevealOnScroll delay={300}>
               <div className="transition duration-700 ease-out">
-                <label htmlFor="message" className="block text-lg font-semibold mb-3 text-zinc-100">Message</label>
+                <label
+                  htmlFor="message"
+                  className="block text-lg font-semibold mb-3 text-zinc-100"
+                >
+                  Message
+                </label>
                 <textarea
                   name="message"
                   id="message"
@@ -84,7 +108,9 @@ export const ContactMe = () => {
                   rows={5}
                   placeholder="Your message..."
                   value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                   className="w-full px-6 py-4 text-md rounded-xl bg-zinc-800 text-white border border-zinc-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 shadow-md placeholder-zinc-400 transition"
                 />
               </div>

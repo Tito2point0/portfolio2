@@ -26,16 +26,15 @@ export const ContactMe = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-zinc-900 to-black py-24 px-6">
+    <section id="contact" className="min-h-screen flex items-center justify-center bg-gray-100 py-24 px-6 font-sans">
       <RevealOnScroll>
-        <div className="w-[65vw] bg-zinc-900 p-20 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.6)] border border-zinc-800 transition-all duration-500">
-          <h2 className="text-5xl font-extrabold text-center text-blue-400 mb-16">
-            Get in Touch
-          </h2>
-          <form onSubmit={handleSubmit} className="space-y-14">
-            <RevealOnScroll delay={0}>
-              <div className="transition duration-700 ease-out">
-                <label htmlFor="name" className="block text-xl font-semibold mb-3 text-white">Name</label>
+        <div className="w-[90vw] max-w-6xl bg-white shadow-2xl rounded-3xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+          {/* Left: Form */}
+          <div className="p-12 md:p-16">
+            <h2 className="text-4xl font-bold text-blue-700 mb-10">Let’s Connect</h2>
+            <form onSubmit={handleSubmit} className="space-y-10">
+              <div>
+                <label htmlFor="name" className="block text-lg font-semibold text-gray-800 mb-2">Name</label>
                 <input
                   type="text"
                   name="name"
@@ -44,14 +43,12 @@ export const ContactMe = () => {
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-10 py-5 text-xl rounded-2xl bg-zinc-800 text-white border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-zinc-400"
+                  className="w-full px-6 py-4 text-md rounded-lg bg-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
-            </RevealOnScroll>
 
-            <RevealOnScroll delay={150}>
-              <div className="transition duration-700 ease-out">
-                <label htmlFor="email" className="block text-xl font-semibold mb-3 text-white">Email</label>
+              <div>
+                <label htmlFor="email" className="block text-lg font-semibold text-gray-800 mb-2">Email</label>
                 <input
                   type="email"
                   name="email"
@@ -60,14 +57,12 @@ export const ContactMe = () => {
                   placeholder="example@gmail.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-10 py-5 text-xl rounded-2xl bg-zinc-800 text-white border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-zinc-400"
+                  className="w-full px-6 py-4 text-md rounded-lg bg-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
-            </RevealOnScroll>
 
-            <RevealOnScroll delay={300}>
-              <div className="transition duration-700 ease-out">
-                <label htmlFor="message" className="block text-xl font-semibold mb-3 text-white">Message</label>
+              <div>
+                <label htmlFor="message" className="block text-lg font-semibold text-gray-800 mb-2">Message</label>
                 <textarea
                   name="message"
                   id="message"
@@ -76,26 +71,34 @@ export const ContactMe = () => {
                   placeholder="Your message..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-10 py-5 text-xl rounded-2xl bg-zinc-800 text-white border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-zinc-400"
+                  className="w-full px-6 py-4 text-md rounded-lg bg-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
-            </RevealOnScroll>
 
-            <RevealOnScroll delay={450}>
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold py-5 text-xl rounded-2xl transition-transform transform hover:-translate-y-1"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 text-md rounded-lg transition duration-300 ease-in-out"
               >
                 Send Message
               </button>
-            </RevealOnScroll>
 
-            {resultMessage && (
-              <p className="text-center text-md mt-6 text-white animate-fade-in">
-                {resultMessage}
+              {resultMessage && (
+                <p className="text-center text-gray-600 mt-4 animate-fade-in">
+                  {resultMessage}
+                </p>
+              )}
+            </form>
+          </div>
+
+          {/* Right: Decorative or Info Panel */}
+          <div className="hidden md:flex items-center justify-center bg-gradient-to-br from-blue-600 to-cyan-400 text-white p-12">
+            <div className="text-center space-y-6">
+              <h3 className="text-3xl font-bold">Let’s Build Something</h3>
+              <p className="text-lg">
+                Whether you have a question, a project, or just want to say hi—my inbox is always open. I’m excited to hear from you!
               </p>
-            )}
-          </form>
+            </div>
+          </div>
         </div>
       </RevealOnScroll>
     </section>

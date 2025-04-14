@@ -26,15 +26,23 @@ export const ContactMe = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center bg-gray-100 py-24 px-6 font-sans">
+    <section
+      id="contact"
+      className="relative min-h-screen flex items-center justify-center bg-black py-24 px-6 overflow-hidden"
+    >
+      {/* Blurred Gradient Background Element */}
+      <div className="absolute w-[500px] h-[500px] bg-gradient-to-br from-purple-600 to-blue-600 rounded-full blur-[120px] opacity-20 top-10 left-[-100px] z-0" />
+
       <RevealOnScroll>
-        <div className="w-[90vw] max-w-6xl bg-white shadow-2xl rounded-3xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
-          {/* Left: Form */}
-          <div className="p-12 md:p-16">
-            <h2 className="text-4xl font-bold text-blue-700 mb-10">Let’s Connect</h2>
-            <form onSubmit={handleSubmit} className="space-y-10">
-              <div>
-                <label htmlFor="name" className="block text-lg font-semibold text-gray-800 mb-2">Name</label>
+        <div className="w-full max-w-4xl z-10 bg-zinc-900/80 backdrop-blur-md border border-zinc-700 p-12 md:p-20 rounded-3xl shadow-[0_10px_50px_rgba(0,0,0,0.8)] transition-all duration-500">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-center text-blue-400 mb-14">
+            Get in Touch
+          </h2>
+          <form onSubmit={handleSubmit} className="space-y-12">
+            {/* Name Input */}
+            <RevealOnScroll delay={0}>
+              <div className="transition duration-700 ease-out">
+                <label htmlFor="name" className="block text-lg font-semibold mb-3 text-zinc-100">Name</label>
                 <input
                   type="text"
                   name="name"
@@ -43,62 +51,61 @@ export const ContactMe = () => {
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-6 py-4 text-md rounded-lg bg-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-6 py-4 text-md rounded-xl bg-zinc-800 text-white border border-zinc-600 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-md placeholder-zinc-400 transition"
                 />
               </div>
+            </RevealOnScroll>
 
-              <div>
-                <label htmlFor="email" className="block text-lg font-semibold text-gray-800 mb-2">Email</label>
+            {/* Email Input */}
+            <RevealOnScroll delay={150}>
+              <div className="transition duration-700 ease-out">
+                <label htmlFor="email" className="block text-lg font-semibold mb-3 text-zinc-100">Email</label>
                 <input
                   type="email"
                   name="email"
                   id="email"
                   required
-                  placeholder="example@gmail.com"
+                  placeholder="example@email.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-6 py-4 text-md rounded-lg bg-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-6 py-4 text-md rounded-xl bg-zinc-800 text-white border border-zinc-600 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-md placeholder-zinc-400 transition"
                 />
               </div>
+            </RevealOnScroll>
 
-              <div>
-                <label htmlFor="message" className="block text-lg font-semibold text-gray-800 mb-2">Message</label>
+            {/* Message Input */}
+            <RevealOnScroll delay={300}>
+              <div className="transition duration-700 ease-out">
+                <label htmlFor="message" className="block text-lg font-semibold mb-3 text-zinc-100">Message</label>
                 <textarea
                   name="message"
                   id="message"
                   required
-                  rows={6}
+                  rows={5}
                   placeholder="Your message..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-6 py-4 text-md rounded-lg bg-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-6 py-4 text-md rounded-xl bg-zinc-800 text-white border border-zinc-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 shadow-md placeholder-zinc-400 transition"
                 />
               </div>
+            </RevealOnScroll>
 
+            {/* Submit Button */}
+            <RevealOnScroll delay={450}>
               <button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 text-md rounded-lg transition duration-300 ease-in-out"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-4 text-lg rounded-xl transition-transform transform hover:-translate-y-1 shadow-lg"
               >
                 Send Message
               </button>
+            </RevealOnScroll>
 
-              {resultMessage && (
-                <p className="text-center text-gray-600 mt-4 animate-fade-in">
-                  {resultMessage}
-                </p>
-              )}
-            </form>
-          </div>
-
-          {/* Right: Decorative or Info Panel */}
-          <div className="hidden md:flex items-center justify-center bg-gradient-to-br from-blue-600 to-cyan-400 text-white p-12">
-            <div className="text-center space-y-6">
-              <h3 className="text-3xl font-bold">Let’s Build Something</h3>
-              <p className="text-lg">
-                Whether you have a question, a project, or just want to say hi—my inbox is always open. I’m excited to hear from you!
+            {resultMessage && (
+              <p className="text-center text-md mt-6 text-white animate-fade-in">
+                {resultMessage}
               </p>
-            </div>
-          </div>
+            )}
+          </form>
         </div>
       </RevealOnScroll>
     </section>

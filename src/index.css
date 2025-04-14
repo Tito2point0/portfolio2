@@ -22,6 +22,7 @@ html, body {
   .animate-blink {
     animation: blink 0.8s step-end infinite;
   }
+
   @keyframes loading {
     0% {
       transform: translateX(-100%);
@@ -33,6 +34,25 @@ html, body {
 
   .animate-loading-bar {
     animation: loading 0.8s ease infinite;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .animate-typing {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #f3f4f6;
+    width: 0;
+    animation:
+      typing 2.5s steps(25, end) forwards,
+      blink 0.75s step-end infinite;
   }
 }
 

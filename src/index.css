@@ -20,7 +20,7 @@ html, body {
   }
 
   .animate-blink {
-    animation: blink 0.8s step-end infinite
+    animation: blink 0.8s step-end infinite;
   }
 
   @keyframes loading {
